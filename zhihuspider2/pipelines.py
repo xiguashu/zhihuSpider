@@ -7,7 +7,6 @@
 
 
 import pymysql
-import datetime
 
 
 
@@ -25,9 +24,6 @@ class UserPipeline(object):
         self.connect = pymysql.connect(user=DbConfig['user'], passwd=DbConfig['password'], db=DbConfig['db'],
                                     host=DbConfig['host'], charset='utf8', use_unicode=True,port=3306)
         self.cursor = self.connect.cursor()
-        # 清空表
-        # self.cursor.execute('truncate table weather;')
-        # self.conn.commit()
 
     def process_item(self, item, spider):
 
